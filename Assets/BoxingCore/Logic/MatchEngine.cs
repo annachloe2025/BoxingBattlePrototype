@@ -45,6 +45,24 @@ namespace BoxingCore
             return fin;
         }
 
+        // 1ターン(4サブターン)を解決。KOが起きたら Ko=true の結果を返す（events に各手を追記）。
+        // ラウンド/ターンの進行・判定・回復は呼び出し側（操作版のコントローラ）が管理する。
+        public static SubturnResult RunTurn(MatchState s, TurnCommands p1, TurnCommands p2,
+            IRandom rng, List<BattleEvent> events)
+        {
+            int moveNo = MoveOrder.DecideMoveNo(s.P1.Stats.Speed, s.P2.Stats.Speed, rng);
+            for (s.Subturn = 1; s.Subturn <= 4; s.Subturn++)
+            {
+                int action = MoveOrder.ActionAt(s.Subturn, moveNo);
+                var r = SubturnResolver.Resolve(s, action, p1, p2, rng);
+                if (events != null) events.Add(MakeEvent(s, r, false, false, default));
+                if (r.Ko) return r;
+            }
+            UpdateCounterCount(s.P1, p1.Defense);
+            UpdateCounterCount(s.P2, p2.Defense);
+            return new SubturnResult(); // KOなし
+        }
+
         private static BattleEvent MakeEvent(MatchState s, SubturnResult r, bool roundEnd, bool matchEnd, MatchOutcome outcome)
         {
             var e = new BattleEvent
