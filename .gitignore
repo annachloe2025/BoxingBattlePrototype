@@ -1,0 +1,88 @@
+# ===== Unity 生成物（必ず除外：容量大） =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Visual Studio / Rider / IDE
+.vs/
+.idea/
+.vsconfig
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Unity パッケージ/ビルド成果物
+*.unitypackage
+*.apk
+*.aab
+*.app
+crashlog/
+sysinfo.txt
+*.stackdump
+
+# ===== 容量対策：画像・音声・動画・3D・大型バイナリを除外 =====
+# 画像
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tga
+*.tif
+*.tiff
+*.psd
+*.psb
+*.exr
+*.hdr
+*.tlg
+# 音声
+*.wav
+*.mp3
+*.ogg
+*.aif
+*.aiff
+*.flac
+# 動画
+*.mp4
+*.mov
+*.avi
+*.webm
+# 3D / 大型アセット
+*.fbx
+*.obj
+*.blend
+*.unity3d
+*.asset.meta.bytes
+# アーカイブ / 実行ファイル / ゲームデータ
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.exe
+*.xp3
+*.kdt
+*.ksd
+
+# ※注意：上記により、後でAssets/に追加する「ゲームの画像・音声」もコミット対象外になります。
+#   特定ファイルだけ含めたい場合は  git add -f <パス>  で強制追加してください。

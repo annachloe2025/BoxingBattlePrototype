@@ -1,0 +1,10 @@
+{
+    "name": "BoxingCore.Tests",
+    "rootNamespace": "BoxingCore.Tests",
+    "references": ["BoxingCore"],
+    "includePlatforms": ["Editor"],
+    "precompiledReferences": ["nunit.framework.dll"],
+    "defineConstraints": ["UNITY_INCLUDE_TESTS"],
+    "optionalUnityReferences": ["TestAssemblies"],
+    "autoReferenced": false
+}
