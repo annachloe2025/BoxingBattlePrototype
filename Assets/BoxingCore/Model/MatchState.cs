@@ -10,6 +10,7 @@ namespace BoxingCore
         public int Round = 1, Turn = 1, Subturn = 1;
         public readonly int MaxRound;
         public int MaxTurn = 12;
+        public int DownRule = 2;   // 何ノックダウンでKOか（1/2/3）。既定2
 
         public readonly int[] RoundHit = new int[2];   // 判定用・各ラウンドの与弾数(ラウンド毎リセット)
         public readonly int[] JudgeTotal = new int[2];  // 判定スコア累計
